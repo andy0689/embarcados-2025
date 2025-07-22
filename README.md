@@ -14,13 +14,14 @@ Este projeto implementa uma versão simplificada do popular jogo "Chrome Dino Ga
 * **Detecção de Colisão:** O jogo detecta colisões entre o dinossauro e os obstáculos.
 * **Sistema de Pontuação:** A pontuação é incrementada à medida que o jogo avança.
 * **Telas de Início e Fim de Jogo:** Apresenta uma tela de início e uma tela de "Game Over".
-* **Controle de Entrada:** Controlado via entradas do hardware (provavelmente botões da placa DE10-Standard, como KEY0 para pular e KEY1 para reiniciar).
+* **Controle de Entrada:** Controlado via as teclas **KEY0** e **KEY1** da placa.
 
 ## Requisitos de Hardware
 
-* Placa de desenvolvimento **Intel DE10-Standard** (com processador ARM Cortex-A9).
+* Placa de desenvolvimento **Intel DE10-Standard** (com processador ARM Cortex-A9 e **FPGA Cyclone V**).
 * Monitor ou tela conectada à saída de vídeo da placa.
-* Teclado (para depuração via Semihosting, se configurado) ou botões integrados na placa para controle do jogo.
+* As teclas **KEY0** (para pular/movimentação do dino) e **KEY1** (para iniciar/reiniciar o jogo) são utilizadas para controle.
+* A memória **SDRAM** da placa é utilizada como buffer de vídeo para renderização gráfica.
 
 ## Requisitos de Software
 
@@ -58,8 +59,7 @@ Os principais arquivos do projeto são:
 
 ## Jogabilidade
 
-* **Iniciar o Jogo:** Na tela inicial, pressione o botão **KEY1** (ou o botão configurado para iniciar/reiniciar) na sua placa DE10-Standard.
-* **Pular:** Para fazer o dinossauro pular e evitar os obstáculos (cactos e pássaros), pressione o botão **KEY0** (ou o botão configurado para pular).
+* **Iniciar o Jogo:** Na tela inicial, pressione a tecla **KEY1** na sua placa DE10-Standard para começar o jogo.
+* **Pular:** Para fazer o dinossauro pular e evitar os obstáculos (cactos e pássaros), pressione a tecla **KEY0**.
 * **Game Over:** O jogo termina se o dinossauro colidir com um cacto ou um pássaro.
 * **Reiniciar:** Após o "Game Over", pressione **KEY1** novamente para reiniciar o jogo.
-
