@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "DE10-Standard ARM (Monitor Program)", // Nome mais descritivo para a sua configuração
+            "includePath": [
+                "${workspaceFolder}/**", // **1. Seus arquivos de cabeçalho do projeto:** Inclui todos os .h dentro do seu diretório do projeto e subdiretórios.
+                // **2. Cabeçalhos padrão C e ARM do toolchain Intel FPGA:**
+                // ESTES CAMINHOS SÃO EXEMPLOS. VOCÊ PRECISA CONFERIR NA SUA INSTALAÇÃO DA INTEL FPGA.
+                // Geralmente ficam em uma estrutura parecida com esta:
+                "C:/intelFPGA/18.1/University_Program/Monitor_Program/arm_tools/baremetal/arm-altera-eabi/include",
+                "C:/intelFPGA/18.1/University_Program/Monitor_Program/arm_tools/baremetal/arm-altera-eabi/include/c++/4.7.3" // Inclui cabeçalhos C++ se você usar (mesmo que seja C puro, pode ser necessário para algumas libs)
+            ],
+            "defines": [
+                // Não precisamos das defines de Windows como _DEBUG, UNICODE, etc., para um projeto embarcado.
+                // Se o seu código usar alguma define específica de placa, adicione aqui (ex: "BOARD=\"DE10-Standard\"")
+            ],
+            // **3. Caminho do Compilador ARM:** O caminho completo para o executável do seu compilador ARM GCC.
+            // VERIFIQUE ESTE CAMINHO NA SUA INSTALAÇÃO:
+            "compilerPath": "C:/intelFPGA/18.1/University_Program/Monitor_Program/arm_tools/baremetal/bin/arm-altera-eabi-gcc.exe",
+            "cStandard": "c11", // Padrão C usado no seu projeto (c11 é comum, pode ser c99)
+            "cppStandard": "c++17", // Padrão C++ (mantenha se não tiver certeza, ou remova se for C puro e não tiver problema)
+            "intelliSenseMode": "gcc-arm" // **4. Modo de IntelliSense para ARM GCC:** Crucial para o IntelliSense funcionar corretamente com esse toolchain
+        }
+    ],
+    "version": 4
+}
